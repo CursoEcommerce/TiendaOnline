@@ -18,7 +18,7 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.0.0",
     "stripe": "^10.17.0",
-    "swr": "^0.5.6"
+    "swr": "^2.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
