@@ -1,5 +1,5 @@
-import { StarIcon as EmptyStarIcon } from '@heroicons/react/outline';
-import { StarIcon } from '@heroicons/react/solid';
+import { FaRegStar as EmptyStarIcon } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
 
 const Rating = ({ rate = 0, count = 0, max = 5 }) => {
   const roundedRate = Math.round(rate);
@@ -7,7 +7,7 @@ const Rating = ({ rate = 0, count = 0, max = 5 }) => {
   return (
     <div className="flex items-center -ml-1">
       {[...new Array(roundedRate)].map((_, i) => (
-        <StarIcon key={i} className="w-6 h-6 flex-shrink-0 text-yellow-400" />
+        <FaStar key={i} className="w-6 h-6 flex-shrink-0 text-yellow-400" />
       ))}
       {[...new Array(max - roundedRate)].map((_, i) => (
         <EmptyStarIcon
