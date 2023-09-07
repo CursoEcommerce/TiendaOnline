@@ -5,7 +5,7 @@ import { useShoppingCart } from '@/hooks/use-shopping-cart';
 import Image from 'next/image';
 import Head from 'next/head';
 import { formatCurrency } from '@/lib/utils';
-import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline';
+import { AiOutlineMinus,AiOutlinePlus } from 'react-icons/ai'
 
 import products from 'products';
 
@@ -88,14 +88,14 @@ const Product = props => {
                   disabled={qty <= 1}
                   className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current hover:bg-rose-100 hover:text-rose-500 rounded-md p-1"
                 >
-                  <MinusSmIcon className="w-6 h-6 flex-shrink-0" />
+                  <AiOutlineMinus className="w-6 h-6 flex-shrink-0" />
                 </button>
                 <p className="font-semibold text-xl">{qty}</p>
                 <button
                   onClick={() => setQty(prev => prev + 1)}
                   className="hover:bg-green-100 hover:text-green-500 rounded-md p-1"
                 >
-                  <PlusSmIcon className="w-6 h-6 flex-shrink-0 " />
+                  <AiOutlinePlus className="w-6 h-6 flex-shrink-0 " />
                 </button>
               </div>
 
