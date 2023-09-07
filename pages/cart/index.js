@@ -6,12 +6,8 @@ import { useShoppingCart } from '@/hooks/use-shopping-cart';
 import axios from 'axios';
 import { formatCurrency } from '@/lib/utils';
 import getStripe from '@/lib/get-stripe';
-import {
-  XCircleIcon,
-  XIcon,
-  MinusSmIcon,
-  PlusSmIcon,
-} from '@heroicons/react/outline';
+
+import { AiOutlineCloseCircle,AiOutlineClose,AiOutlineMinus,AiOutlinePlus } from 'react-icons/ai'
 
 const Cart = () => {
   const { cartDetails, totalPrice, cartCount, addItem, removeItem, clearCart } =
@@ -100,20 +96,20 @@ const Cart = () => {
                       disabled={product?.quantity <= 1}
                       className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current hover:bg-rose-100 hover:text-rose-500 rounded-md p-1"
                     >
-                      <MinusSmIcon className="w-6 h-6 flex-shrink-0" />
+                      <AiOutlineMinus className="w-6 h-6 flex-shrink-0" />
                     </button>
                     <p className="font-semibold text-xl">{product.quantity}</p>
                     <button
                       onClick={() => addItem(product)}
                       className="hover:bg-green-100 hover:text-green-500 rounded-md p-1"
                     >
-                      <PlusSmIcon className="w-6 h-6 flex-shrink-0 " />
+                      <AiOutlinePlus className="w-6 h-6 flex-shrink-0 " />
                     </button>
                   </div>
 
                   {/* Price */}
                   <p className="font-semibold text-xl ml-16">
-                    <XIcon className="w-4 h-4 text-gray-500 inline-block" />
+                    <AiOutlineClose className="w-4 h-4 text-gray-500 inline-block" />
                     {formatCurrency(product.price)}
                   </p>
 
@@ -122,7 +118,7 @@ const Cart = () => {
                     onClick={() => removeItem(product, product.quantity)}
                     className="ml-4 hover:text-rose-500"
                   >
-                    <XCircleIcon className="w-6 h-6 flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity" />
+                    <AiOutlineCloseCircle className="w-6 h-6 flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity" />
                   </button>
                 </div>
               </div>
