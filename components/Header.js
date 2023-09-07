@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useShoppingCart } from '@/hooks/use-shopping-cart';
 import { formatCurrency } from '@/lib/utils';
 import { Logo } from '@/components/index';
-import { ShoppingCartIcon } from '@heroicons/react/solid';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Header = () => {
   const { totalPrice, cartCount } = useShoppingCart();
@@ -14,7 +14,7 @@ const Header = () => {
         <Link href="/cart">
           <a className="flex items-center space-x-1 text-gray-700 hover:text-gray-900">
             <div className="relative">
-              <ShoppingCartIcon className="w-7 h-7 flex-shrink-0" />
+              <FaShoppingCart className="w-7 h-7 flex-shrink-0" />
             </div>
             <p className="text-lg">
               {formatCurrency(totalPrice)}{' '}
